@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS10 0306</title>
+  </head>
+  <body>
+    <script>
+      function getUserData({ firstName, favoriteColor = "green" }) {
+        return `Your name is ${firstName} and you like ${favoriteColor}`;
+      }
+
+      console.log(
+        getUserData({ firstName: "Alejandro", favoriteColor: "purple" })
+      ); // *
+      // Your name is Alejandro and you like purple
+      console.log(getUserData({ firstName: "Melissa" })); // **
+      // Your name is Melissa and you like green
+      console.log(getUserData({})); // ***
+      // Your name is undefined and you like green
+
+      // เพราะ `${variable} ${variable}` ใช้แทนค่า ตัวแปรลงไปใน string ได้ โดยยังคง format และอักษรพิเศษไว้ได้
+      // favoriteColor = "green" สามารถกำหนดค่า default ให้กับ perameter ของ function
+      // function getUserData({ firstName, favoriteColor = "green" }) เป็นการ destructuring
+      // object ที่ส่งผ่าน function เข้ามา
+    </script>
+  </body>
+</html>

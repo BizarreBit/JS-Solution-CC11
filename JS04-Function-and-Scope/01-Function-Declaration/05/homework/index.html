@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0105</title>
+  </head>
+  <body>
+    <script>
+      const sender = "Matt";
+
+      function sendTo(from, to) {
+        console.log(`From ${from} to ${to}`);
+      }
+
+      sendTo(sender, "Sarah"); // *             // "From Matt to Sarah"
+      // สามารถระบุค่าให้ function parameter ได้ด้วยทั้งผ่านตัวแปร และค่าโดยตรง
+      sendTo(null); // **                       // "From null to undefined"
+      // function parameter ที่ไม่ได่ระบุให้ จะมีค่าเป็น undefined
+
+      function sendTo2(to, from = "CC") {
+        console.log(`From ${from} to ${to}`);
+      }
+
+      sendTo2("Max"); // ***                    // "From CC to Max"
+      // การกำหนดค่า function parameter ไม่ขึ้นกับชื่อตัวแปร แต่ อิงตามลำดับก่อนหลัง
+      // สามารถกำหนดค่าเริ่มต้นให้กับ function parameter โดยระบุค่าท้ายชื่อในตอนประกาศฟังก์ชัน
+      sendTo2("Ben", "Jay"); // ****            // "From Jay to Ben"
+    </script>
+  </body>
+</html>

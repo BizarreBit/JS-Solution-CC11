@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05 0402</title>
+  </head>
+  <body>
+    <script>
+      const user = { name: "Jack", role: "ADMIN" };
+      const admin = { name: "Jack", role: "ADMIN" };
+      console.log(user === admin); // *
+      // false
+      // เพราะตัวแปรใน javascript จะเก็บที่อยู่อ้างอิงของ object แต่ไม่ได้เก็บ object โดยตรง
+      // แม้ properties ของ object เหมือนกัน แต่ถูกกำหนดให้ตัวแปรคนละครั้งกัน
+      // javascript จะนำ object ที่ถูกกำหนดขึ้นไปเก็บไว้ ณ ที่อยู่บน memory ที่ต่างกัน
+      // ที่อยู่อ้างอิงที่ถูกเก็บไว้ในตัวแปร user และ admin จึงเป็นคนละค่ากัน
+    </script>
+  </body>
+</html>

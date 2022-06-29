@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0111</title>
+  </head>
+  <body>
+    <script>
+      function sayHi(age) {
+        if (age < 12) alert("Hi kid");
+      }
+      console.log(sayHi); // *              // Log: function definition
+      // เพราะ sayHi เป็นชื่อตัวแปรที่อ้างอิงถึงฟังก์ชัน
+      console.log(sayHi(10)); // **         // Alert: "Hi kid", Log: undefined
+      // เพราะ sayHi() เป็นการเรียกใช้ฟังก์ชัน และฟังก์ชันนี้ไม่มีการ return
+
+      function sayHi2(name) {
+        if (name) {
+          alert("Hi " + name);
+          return;
+        } else {
+          return "Who are you";
+        }
+      }
+      console.log(sayHi2("John")); // ***   // Alert: "Hi John", Log: undefined
+      // เพราะ มีการระบุค่าให้กับ function attribute "name" ซึ่งตามเงื่อนไขมีคำสั่ง return โดยไม่ได้ระบุค่า
+      console.log(sayHi2()); // ****        // Log: "Who are you"
+      // เพราะ ไม่มีการระบุค่าให้กับ function attribute "name" ซึ่งตามเงื่อนไขมีคำสั่ง return เป็น string "Who are you"
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0401</title>
+  </head>
+  <body>
+    <script>
+      let name = "John";
+      function sayHi() {
+        alert("Hi, " + name);
+      }
+      name = "Pete";
+      sayHi(); // *     // "Hi, Pete"
+      // เพราะตัวแปรชื่อ name ไม่มีการประกาศอยู่ใน scope ของฟังก์ชัน sayHi
+      // จึงนำตัวแปรที่อยู่ใน Global scope มาใช้ ซึ่งมีการระบุค่า เป็น "Pete" ก่อนเรียกใช้ฟังก์ชัน satHi
+    </script>
+  </body>
+</html>

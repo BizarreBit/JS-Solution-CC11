@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS09 0101</title>
+  </head>
+  <body>
+    <script>
+      class Calculator {
+        // constructor(initial) {
+        //   this.value = initial || 0;
+        // }
+        constructor(initial = 0) {
+          this.value = initial;
+        }
+
+        sum(num) {
+          this.value += num;
+          return this; //solution
+        }
+
+        subtract(num) {
+          this.value -= num;
+          return this; //solution
+        }
+
+        multiply(num) {
+          this.value *= num;
+          return this; //solution
+        }
+        divide(num) {
+          this.value /= num;
+          return this; //solution
+        }
+        show() {
+          alert(this.value);
+          return this; //solution
+        }
+      }
+
+      const calculator = new Calculator(3);
+      calculator.sum(4);
+      calculator.subtract(5);
+      calculator.multiply(6);
+      calculator.divide(7);
+      calculator.show();
+      calculator.sum(4).subtract(9).divide(3).show(); // solution
+    </script>
+  </body>
+</html>

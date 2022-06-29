@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS01 0403</title>
+  </head>
+  <body>
+    <script>
+      let a = undefined;
+      let b = " ";
+      let c = !b;
+
+      console.log("d:");
+      let d = Boolean(a);
+      console.log(d, typeof d);
+      d = !!a;
+      console.log(d, typeof d);
+
+      console.log("e:");
+      let e = Boolean(b);
+      console.log(e, typeof e);
+      e = !!b;
+      console.log(e, typeof e);
+
+      console.log("f:");
+      let f = Boolean(c);
+      console.log(f, typeof f);
+      f = !!c;
+      console.log(f, typeof f);
+    </script>
+  </body>
+</html>

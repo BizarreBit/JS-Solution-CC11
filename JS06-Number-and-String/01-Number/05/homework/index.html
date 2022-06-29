@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS06 0105</title>
+  </head>
+  <body>
+    <script>
+      let i = 0;
+      while (i != 10 && i < 20) {
+        i += 0.2;
+      }
+      console.log(i);
+
+      // while loop จะไม่หยุดแม้ว่า i จะมีค่าเกิน 10
+      // เนื่องจาก มีการเกิด precision lost จากการเก็บตัวเลขทศนิยมใน javascript
+      // ซึ่งเก็บตัวเลขในระบบเลขฐาน 2 การบวกเพิ่มทีละ 0.2 ไม่ได้ค่าเท่ากับ 50 พอดี
+    </script>
+  </body>
+</html>

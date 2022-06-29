@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS10 0201</title>
+  </head>
+  <body>
+    <script>
+      const nums1 = [1, -2, 3, 4];
+      const nums2 = [8, 3, -8, 1];
+
+      const mergedNums = [...nums1, ...nums2];
+      console.log(mergedNums);
+
+      const mergedNums2 = [5, ...nums1, -6, -1, ...nums2];
+      console.log(mergedNums2);
+
+      console.log(mergedNums2.reduce((acc, el) => acc + +el, 0));
+    </script>
+  </body>
+</html>

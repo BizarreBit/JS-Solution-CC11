@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS01 0408</title>
+  </head>
+  <body>
+    <script>
+      let a = 1 * "4" + +null + +" " - "5" * 2 + +(7 + 2 + "" + +!!undefined);
+      // a = 1 * "4" + 0 + 0 - "5" * 2 + +(7 + 2 + "" + +!true)
+      // a = 1 * "4" + 0 + 0 - "5" * 2 + +(7 + 2 + "" + +false)
+      // a = 1 * "4" + 0 + 0 - "5" * 2 + +(7 + 2 + "" + 0)
+      // a = 1 * "4" + 0 + 0 - "5" * 2 + +(9 + "" + 0)
+      // a = 1 * "4" + 0 + 0 - "5" * 2 + +("9" + 0)
+      // a = 1 * "4" + 0 + 0 - "5" * 2 + +("90")
+      // a = 1 * "4" + 0 + 0 - "5" * 2 + 90
+      // a = 4 + 0 + 0 - 10 + 90
+      // a = 84
+      console.log(a)
+    </script>
+  </body>
+</html>

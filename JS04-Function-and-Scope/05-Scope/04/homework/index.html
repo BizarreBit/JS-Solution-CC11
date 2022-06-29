@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0504</title>
+  </head>
+  <body>
+    <script>
+      let x = 1;
+      function func() {
+        console.log(x); // *       // เกิด Error ขึ้น ReferenceError: Cannot access 'x' before initialization
+        let x = 2;
+      }
+      func();
+      // เมื่อเริ่มดำเนินคำสั่งใน code block, function หรือชุดคำสั่งหลัก ตัวแปรทั้งหมดที่ถูกประกาศภายใน
+      // จะถูกระบุใน Lexical Environment ด้วยสถานะ Uninitialized โดยจะยังไม่สามารถใช้งานได้
+      // จนกว่าจะจึงถึงคำสั่งประกาศตัวแปร เช่น let 
+      // กล่าวได้ว่า engine รับรู้ถึงการมีอยู่ของตัวแปรที่มีการประกาศภายในทันทีที่ code block, function 
+      // หรือชุดคำสั่งหลักเริ่มทำงาน แต่จะยังคงไม่สามารถใช้งานได้จนกว่าจะถึงคำสั่งตัวแปร มีการเรียกช่วงที่ตัวแปร
+      // ใช้งานไม่ได้ชั่วคราวนี้ว่า Dead Zone
+
+    </script>
+  </body>
+</html>

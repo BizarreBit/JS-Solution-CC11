@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS10 0102</title>
+  </head>
+  <body>
+    <script>
+      const filterOutOdds = (...nums) =>
+        nums.reduce((acc, el) => (el % 2 === 0 ? [...acc, el] : acc), []);
+
+      console.log(filterOutOdds(1, 2, 3));
+      console.log(filterOutOdds(1, 2, 3, 4, 5, 6));
+      console.log(filterOutOdds(0));
+      console.log(filterOutOdds());
+    </script>
+  </body>
+</html>

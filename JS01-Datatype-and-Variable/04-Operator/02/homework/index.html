@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS01 0402</title>
+  </head>
+  <body>
+    <script>
+      let a = undefined;
+      let b = null;
+      let c = b + "4 2";
+
+      console.log("d:");
+      let d = Number(a);
+      console.log(d, typeof d);
+      d = +a;
+      console.log(d, typeof d);
+      d = a * 1; //solution
+      console.log(d, typeof d);
+
+      console.log("e:");
+      let e = Number(b);
+      console.log(e, typeof e);
+      e = +b;
+      console.log(e, typeof e);
+      e = b * 1; //solution
+      console.log(e, typeof e);
+
+      console.log("f:");
+      let f = Number(c);
+      console.log(f, typeof f);
+      f = +c;
+      console.log(f, typeof f);
+      f = c * 1; //solution
+      console.log(f, typeof f);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0610</title>
+  </head>
+  <body>
+    <script>
+      let names = ["Jack", "John", "Bill", "John", "Rick", "Bill", "John"];
+      // expected result: {Jack: 1, John: 3, Bill: 2, Rick: 1}
+
+      const result = {};
+      for (const el of names) {
+        // result[el] ? result[el]++ : (result[el] = 1);
+        result[el] = (result[el] || 0) + 1;
+      }
+      console.log(result);
+
+      const result2 = names.reduce(
+        (acc, el) => ({ ...acc, [el]: (acc[el] || 0) + 1 }),
+        {}
+      );
+      console.log(result2);
+    </script>
+  </body>
+</html>

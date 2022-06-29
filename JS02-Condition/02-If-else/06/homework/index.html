@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS02 0206</title>
+  </head>
+  <body>
+    <script>
+      const isNumber = (input) =>
+        !(input === null || input.trim() === "" || isNaN(input));
+
+      const a = prompt("a + b = ? Enter a");
+      const b = prompt("a + b = ? Enter b");
+
+      if (!(isNumber(a) && isNumber(b))) alert("Invalid number");
+      else alert(+a + +b);
+    </script>
+  </body>
+</html>

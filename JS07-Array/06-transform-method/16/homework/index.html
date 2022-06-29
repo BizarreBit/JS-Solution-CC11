@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0616</title>
+  </head>
+  <body>
+    <script>
+      const persons = [
+        { name: "John", sex: "M" },
+        { name: "Jody", sex: "M" },
+        { name: "Susan", sex: "F" },
+        { name: "Kate", sex: "F" },
+        { name: "Sid", sex: "M" },
+      ];
+      // expexted result: { M: ['John', 'Jody', 'Sid'], F: ['Susan', 'Kate'] }
+
+      const result = {};
+      persons.forEach(({ name, sex }) => {
+        result[sex] ? result[sex].push(name) : (result[sex] = [name]);
+      });
+      console.log(result);
+    </script>
+  </body>
+</html>

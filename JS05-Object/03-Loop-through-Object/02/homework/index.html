@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05 0302</title>
+  </head>
+  <body>
+    <script>
+      const isStrictNaN = (num) => {
+        return (
+          num === null ||
+          typeof num === "boolean" ||
+          typeof num === "object" ||
+          (typeof num === "string" && num.trim() === "") ||
+          isNaN(num)
+        );
+      };
+
+      const multiplyNumeric = (obj, num) => {
+        for (let key in obj) {
+          if (isStrictNaN(obj[key])) continue;
+          obj[key] *= num;
+        }
+      };
+
+      let menu = {
+        width: 200,
+        height: 300,
+        title: "My menu",
+      };
+      console.log(menu);
+
+      multiplyNumeric(menu, 3);
+
+      console.log(menu);
+
+      let allInput = {
+        undefined: undefined,
+        null: null,
+        emptyString: "",
+        space: "   ",
+        textString: "abc",
+        emptyObject: {},
+        object: { key: 0 },
+        emptyArray: [],
+        array: [9, 8],
+        number: 99,
+        numberString: "99",
+        expoNumberString: "1e2",
+        hexNumberString: "0xFF",
+      };
+      multiplyNumeric(allInput, 3);
+      console.log(allInput);
+    </script>
+  </body>
+</html>

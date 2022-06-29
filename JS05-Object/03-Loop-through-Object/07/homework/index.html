@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05 0306</title>
+  </head>
+  <body>
+    <script>
+      const employees = {
+        john: {
+          salary: 1000,
+          address: { district: "Ratchathewi", province: "Bangkok" },
+        },
+        peter: {
+          salary: 1500,
+          address: { district: "Pathumwan", province: "Bangkok" },
+        },
+        mike: {
+          salary: 800,
+          address: { district: "Pakkret", province: "Nonthaburi" },
+        },
+        sarah: {
+          salary: 2200,
+          address: { district: "Sriraja", province: "Chonburi" },
+        },
+      };
+
+      const inputName = prompt("Enter employee name").toLocaleLowerCase();
+      const employee = employees[inputName];
+      alert(
+        employee
+          ? `Name: ${inputName}, salary: ${employee.salary}, address: ${employee.address.district}, ${employee.address.province}`
+          : "Not Found"
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05 0203</title>
+  </head>
+  <body>
+    <script>
+      const isEmptyObject = (obj) => Object.keys(obj).length === 0;
+
+      const product1 = {
+        name: "Water",
+        distributor: {
+          name: "Giraffe Water Company",
+          address: {
+            street: "Phetchaburi",
+            subdistrict: "Thanonphetchaburi",
+            district: "Ratchathewi",
+            province: "Bangkok",
+          },
+        },
+      };
+      const product2 = {};
+      const product3 = {
+        distributor: {
+          address: {
+            street: "Phetchaburi",
+          },
+        },
+      };
+
+      function provinceLog(obj) {
+        if (isEmptyObject(obj)) return;
+        else if (isEmptyObject(obj.distributor)) return;
+        else if (isEmptyObject(obj.distributor.address)) return;
+        else console.log(obj.distributor.address.province);
+      }
+      console.log("product1");
+      provinceLog(product1);
+      console.log("product2");
+      provinceLog(product2);
+      console.log("product3");
+      provinceLog(product3);
+
+      // solution
+      console.log(product1.distributor.address.province);
+      console.log(product2.distributor?.address?.province);
+    </script>
+  </body>
+</html>

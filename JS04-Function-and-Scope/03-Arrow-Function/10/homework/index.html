@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0310</title>
+  </head>
+  <body>
+    <script>
+      const isLeapYear = (year) => {
+        if (year % 100 === 0) {
+          return year % 400 === 0;
+        }
+        return year % 4 === 0;
+      };
+      const ageInDays = (year) => {
+        let days = 0;
+        for (let i = year; i <= 2020; i++) {
+          days += isLeapYear(i) ? 366 : 365;
+        }
+        return days;
+      };
+
+      console.log(ageInDays(2020));
+      console.log(ageInDays(2000));
+    </script>
+  </body>
+</html>

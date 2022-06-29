@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS06 0205</title>
+  </head>
+  <body>
+    <script>
+      console.log(truncate("What I'd like to tell on this topic is:", 20)); // What I'd like to te…
+      console.log(truncate("Hi everyone!", 20)); // Hi everyone!
+      console.log(truncate("012345678901234567890123456789", 20))
+
+      function truncate(str, length) {
+        return str.length > length ? str.slice(0, length) + "..." : str;
+      }
+    </script>
+  </body>
+</html>

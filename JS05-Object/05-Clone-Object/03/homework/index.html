@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05 0503</title>
+  </head>
+  <body>
+    <script>
+      const permission1 = { canView: false, canDelete: false };
+      const permission2 = { canUpdate: true, canCreate: true };
+      const permission3 = { canCreate: false, canDelete: true };
+      const permission4 = { canView: true };
+
+      const upperMerge = (...objList) => {
+        const newObj = {};
+        for (const obj of objList) {
+          for (const key in obj) {
+            // if (newObj[key]) {
+            //   if (newObj[key] < obj[key]) newObj[key] = obj[key];
+            // } else newObj[key] = obj[key];
+            newObj[key] >= obj[key] || (newObj[key] = obj[key]);
+          }
+        }
+        return newObj;
+      };
+      const permission = upperMerge(
+        permission1,
+        permission2,
+        permission3,
+        permission4
+      );
+      console.log(permission);
+
+      //solution
+      console.log(
+        Object.assign({}, permission1, permission2, permission3, permission4)
+      );
+      console.log({
+        ...permission1,
+        ...permission2,
+        ...permission3,
+        ...permission4,
+      });
+    </script>
+  </body>
+</html>

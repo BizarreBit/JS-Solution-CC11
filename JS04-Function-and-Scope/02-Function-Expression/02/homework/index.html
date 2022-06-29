@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0202</title>
+  </head>
+  <body>
+    <script>
+      const showModal = alert;
+      showModal("Execute modal"); // *      // Alert: "Execute modal"
+      // เพราะ showModal อ้างอิงถึง ฟังก์ชัน alert
+
+      const showModal2 = alert(); //        // Alert: ""
+      showModal2("Execute modal"); // **    // not a function
+      // เพราะ showModal2 รับค่าที่ return จาก alert() ซึ่งคือ undefined ที่ไม่สามารถเรียกใช้ในฐานะฟังก์ชัน
+    </script>
+  </body>
+</html>

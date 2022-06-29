@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05 0607 03</title>
+  </head>
+  <body>
+    <script>
+      let calculator = {
+        read() {
+          this.a = +prompt("a ? b = ? , Enter a");
+          this.b = +prompt("a ? b = ? , Enter b");
+        },
+        sum() {
+          return this.a + this.b;
+        },
+        mul() {
+          return this.a * this.b;
+        },
+      };
+
+      calculator.read();
+      alert(calculator.sum());
+      alert(calculator.mul());
+    </script>
+  </body>
+</html>

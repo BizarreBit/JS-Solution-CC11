@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS10 0101</title>
+  </head>
+  <body>
+    <script>
+      const multiply = (...nums) => nums.reduce((acc, el) => acc * el, 1);
+      console.log(multiply(1, 2, 3));
+      console.log(multiply(1, 2, 3, 4, 5, 6));
+      console.log(multiply(0));
+      console.log(multiply());
+    </script>
+  </body>
+</html>

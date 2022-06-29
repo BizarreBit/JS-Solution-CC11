@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0503</title>
+  </head>
+  <body>
+    <script>
+      let phrase = "Hello";
+      if (true) {
+        let user = "John";
+        let count = 0;
+        function sayHi() {
+          count++;
+          alert(`${phrase}, ${user}, ${count}`);
+        }
+      }
+      sayHi(); // *     // "Hello, John"
+      sayHi();
+      phrase = "Hi";
+      let count = 0;
+      sayHi();
+      // เพราะ แม้ตัวแปร user จะอยู่ใน scope ของ code block ของ if
+      // แต่ฟังก์ชัน sayHi ได้จดจำ user: "John" เป็น property [[Environment]] ของฟังก์ชัน
+      // ตั้งแต่ที่ฟังก์ชันถูกสร้าง เนื่องจากฟังก์ชันใน javascript เป็น Closure Function
+      // การเรียกใช้ฟังกชันสามารถทำที่ใดก็ได้โดยจะยังคงเข้าถึงตัวแปรใน [[Environment]] ได้อยู่
+
+      // solution ไม่สามารถเรียกใช้ ฟังก์ชัน sayHi ได้ ??? Inconsistance
+    </script>
+  </body>
+</html>

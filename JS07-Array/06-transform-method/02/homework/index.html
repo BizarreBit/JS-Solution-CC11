@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0602</title>
+  </head>
+  <body>
+    <script>
+      function camelCase(str) {
+        const words = str.split("-");
+        return words.reduce(
+          (prev, el, i) =>
+            prev + (i === 0 ? el : el[0].toUpperCase() + el.slice(1)),
+          ""
+        );
+      }
+      console.log(camelCase("background-color"));
+      console.log(camelCase("dash-separated"));
+      console.log(camelCase("border-top-right-radius"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05 0401</title>
+  </head>
+  <body>
+    <script>
+      const product1 = { name: "Coke", price: 18, size: "500mL" };
+
+      const product2 = product1;
+      product2.name = "Pepsi";
+      product2.price = 19;
+
+      console.log(product1); // *
+      // { name: "Pepsi", price: 19, size: "500mL" }
+      console.log(product2); // **
+      // { name: "Pepsi", price: 19, size: "500mL" }
+      console.log(product1 === product2); // ***
+      // true
+
+      // เพราะตัวแปรใน javascript จะเก็บที่อยู่อ้างอิงของ object แต่ไม่ได้เก็บ object โดยตรง
+      // ในโค้ดข้างต้น ตัวแปร product1 ถูกกำหนดให้เป็นที่อยู่อ้างอิงของ object
+      // ตัวแปร product2 ถูกกำหนดให้เป็นที่อยู่อ้างอิงตามที่ product1 เก็บไว้ ซึ่งอ้างอิงถึง object เดียวกัน
+    </script>
+  </body>
+</html>

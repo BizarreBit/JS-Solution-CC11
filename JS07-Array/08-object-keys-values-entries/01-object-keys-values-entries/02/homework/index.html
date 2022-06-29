@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0802</title>
+  </head>
+  <body>
+    <script>
+      function checkEmptyObj(obj) {
+        if (typeof obj !== "object" || Array.isArray(obj)) return false;
+
+        // for (const key in obj) {
+        //   return false;
+        // }
+        // return true;
+        return Object.keys(obj).length === 0; //solution
+      }
+
+      function checkEmptyObj2(obj) {
+        return typeof obj === "object" && !Array.isArray(obj) && Object.keys(obj).length === 0
+      }
+
+      console.log(checkEmptyObj(""));
+      console.log(checkEmptyObj(0));
+      console.log(checkEmptyObj(false));
+      console.log(checkEmptyObj([]));
+      console.log(checkEmptyObj({ a: 1 }));
+      console.log(checkEmptyObj({}));
+
+      console.log(checkEmptyObj2(""));
+      console.log(checkEmptyObj2(0));
+      console.log(checkEmptyObj2(false));
+      console.log(checkEmptyObj2([]));
+      console.log(checkEmptyObj2({ a: 1 }));
+      console.log(checkEmptyObj2({}));
+    </script>
+  </body>
+</html>

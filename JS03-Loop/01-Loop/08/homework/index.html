@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS03 0108</title>
+  </head>
+  <body>
+    <script>
+      let input;
+      let sum = 0;
+      let count = 0;
+      while (true) {
+        input = prompt("Number");
+        if (
+          input === null ||
+          input.trim() === "" ||
+          isNaN(+input) ||
+          input === "0" ||
+          +input < 0
+        )
+          break;
+        sum += +input;
+        count++;
+      }
+      count > 0 && alert(`Sum: ${sum}, Avg: ${sum / count}`);
+
+      input = 0;
+      sum = 0;
+      count = -1;
+      do {
+        count++;
+        sum += +input;
+        input = prompt("Number");
+      } while (
+        !(
+          input === null ||
+          input.trim() === "" ||
+          isNaN(+input) ||
+          input === "0" ||
+          +input < 0
+        )
+      );
+      count > 0 && alert(`Sum: ${sum}, Avg: ${sum / count}`);
+    </script>
+  </body>
+</html>

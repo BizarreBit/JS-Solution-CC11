@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05 0502</title>
+  </head>
+  <body>
+    <script>
+      const state1 = { username: "john", point: 100, loading: true };
+      const state2 = { ...state1, point: 75, loading: false, success: true };
+    //   const state2 = Object.assign({}, state1, { point: 75, loading: false, success: true });
+      console.log(state1);
+      console.log(state2);
+    </script>
+  </body>
+</html>

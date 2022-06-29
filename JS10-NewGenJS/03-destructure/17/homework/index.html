@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS10 0317</title>
+  </head>
+  <body>
+    <script>
+      const names = [
+        { firstName: "John", lastName: "Doe" },
+        { firstName: "Jack", lastName: "Dann" },
+        { firstName: "Joe", lastName: "Dunne" },
+      ];
+
+      for (const { firstName, lastName } of names) {
+        console.log(`${firstName} ${lastName}`);
+      }
+    </script>
+  </body>
+</html>

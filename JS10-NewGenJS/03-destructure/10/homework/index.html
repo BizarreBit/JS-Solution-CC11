@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS10 0310</title>
+  </head>
+  <body>
+    <script>
+      // const topSalaries = (salaries) => {
+      //   if (
+      //     typeof salaries !== "object" ||
+      //     Array.isArray(salaries) ||
+      //     Object.keys(salaries).length === 0
+      //   )
+      //     return null;
+
+      //   //// return Math.max(...Object.values(salaries));
+
+      //   let maxProp = [];
+      //   for (const prop of Object.entries(salaries)) {
+      //     prop[1] > (maxProp[1] || 0) && (maxProp = prop);
+      //   }
+      //   return maxProp[0];
+      // };
+
+      const topSalaries = (salaries) => {
+        // solution
+        let maxName;
+        let maxSalaries = 0;
+        for (const [name, salary] of Object.entries(salaries)) {
+          salary > maxSalaries && (maxName = name) && (maxSalaries = salary);
+        }
+
+        // return maxName || null
+        return maxName ?? null;
+      };
+
+      let salaries = {
+        John: 100,
+        Pete: 300,
+        Mary: 250,
+      };
+
+      console.log(topSalaries(1));
+      console.log(topSalaries([1, 2]));
+      console.log(topSalaries({}));
+      console.log(topSalaries(salaries));
+    </script>
+  </body>
+</html>

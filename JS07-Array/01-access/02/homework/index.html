@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0102</title>
+  </head>
+  <body>
+    <script>
+      const arr = [1, 2, 4];
+      const newArr = arr;
+
+      arr[0] = 3;
+      console.log(newArr[0]); // *
+      // 3
+      // เพราะ สำหรับ Javascript ตัวแปรจะเก็บที่อยู่อ้างอิงของ array ไม่ใช่ array โดยตรง
+      // การเปลี่ยนแปลงค่าภายใน array ไม่ได้ทำให้ที่อยู่อ้างอิงของ array เปลี่ยนไป
+      // คำสั่ง const newArr = arr; ได้กำหนดให้ตัวแปร newArr เก็บที่อยู่อ้างอิงของ array เดียวกันกับ arr
+      // คำสั่ง console.log(newArr[0]); จะแสดงค่าตำแหน่ง [0] ของ array ตามที่อยู่อ้างอิงที่เก็บไว้
+      // ในตัวแปร newArr ซึ่งเป็นที่อยู่เดียวกับ arr ซึ่งได้มีการแก้ไขค่าโดยคำสั่ง arr[0] = 3 ทำให้แสดงค่า 3 ออกมา
+    </script>
+  </body>
+</html>

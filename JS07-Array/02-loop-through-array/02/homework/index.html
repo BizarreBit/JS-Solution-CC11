@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0202</title>
+  </head>
+  <body>
+    <script>
+      function squareArr(arr) {
+        // return arr.map((el) => el ** 2);
+        const newArr = [];
+        for (const el of arr) {
+          //   newArr.push(el ** 2);
+          newArr[newArr.length] = el ** 2;
+        }
+        return newArr;
+      }
+      const arr = [2, 3, 5, 7, 11];
+      console.log(squareArr(arr));
+    </script>
+  </body>
+</html>

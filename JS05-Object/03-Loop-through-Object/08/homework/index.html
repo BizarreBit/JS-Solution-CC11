@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05 0308</title>
+  </head>
+  <body>
+    <script>
+      const user = {
+        email: "cc@gmail.com",
+        isActive: true,
+      };
+
+      user.isActive = false;
+      console.log(user); // *
+      /*
+      {
+        email: "cc@gmail.com",
+        isActive: false,
+      }
+      */
+      user = {};
+      console.log(user); // **
+      // error (TypeError: Assignment to constant variable)
+
+      // เพราะตัวแปรใน javascript จะเก็บที่อยู่อ้างอิงของ object แต่ไม่ได้เก็บ object โดยตรง
+      // ในโค้ดข้างต้น ตัวแปร user ถูกกำหนดให้เป็นค่าคงที่ของที่อยู่อ้างอิงของ object
+      // การแก้ไข property ภายใน object ด้วยคำสั้งเช่น user.isActive = false; 
+      // ไม่ได้ทำให้ที่อยู่อ้างอิงของ object เปลี่ยนไป และไม่ได้เป็นการกำหนดค่าให้ตัวแปรคงที่ user ใหม่
+      // บรรทัด * จึงแสดงค่าของ object ที่ถูกแก้ไข โดยใช้ที่อยู่อ้างอิงเดิมที่ตัวแปรคงที่ user เก็บไว้ 
+      // แต่การกำหนด object ใหม่ ให้กับตัวแปรคงที่ เช่นคำสั่ง user = {}; ไม่สามารถทำได้
+      // เนื่องจากเป็นการกำหนดค่า ให้กับตัวแปรคงที่ ที่ไม่สามารถกำหนดค่าซ้ำได้
+    </script>
+  </body>
+</html>

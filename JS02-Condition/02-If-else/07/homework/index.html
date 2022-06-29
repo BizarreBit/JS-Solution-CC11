@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS02 0207</title>
+  </head>
+  <body>
+    <script>
+      let username, password;
+      while (true) {
+        username = prompt("username: ");
+        if (username === null) break;
+        else if (username === "") alert("username is required");
+        else {
+          while (true) {
+            password = prompt("password: ");
+            if (password === null) break;
+            else if (password === "") alert("password is required");
+            else {
+              if (
+                !(
+                  (username === "admin" && password === "1234") ||
+                  (username === "john" && password === "qwerty")
+                )
+              )
+                alert("invalid username or password");
+              else alert(`Hello ${username}!`);
+
+              break;
+            }
+          }
+          break;
+        }
+      }
+
+      const input = { username: null, password: null };
+      for (el of Object.keys(input)) {
+        while (true) {
+          input[el] = prompt(`${el}: `);
+          if (input[el] === "") alert(`${el} is required`);
+          else break;
+        }
+        if (input[el] === null) break;
+      }
+
+      if (input.password !== null) {
+        if (
+          !(
+            (input.username === "admin" && input.password === "1234") ||
+            (input.username === "john" && input.password === "qwerty")
+          )
+        )
+          alert("invalid username or password");
+        else alert(`Hello ${input.username}!`);
+      }
+    </script>
+  </body>
+</html>

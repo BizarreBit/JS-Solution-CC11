@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05 0607 01</title>
+  </head>
+  <body>
+    <script>
+    //   "use strict";
+      let user = {
+        name: "John",
+        sayHi: function () {
+          console.log(this.name);
+        },
+        sayHiArrow: () => console.log(this.name),
+        sayHiExpressionArrow: function () {
+          (() => console.log(this.name))();
+        },
+        thisName: this.name,
+      };
+
+      user.sayHi(); // *
+      user.sayHiArrow();
+      user.sayHiExpressionArrow();
+      console.log(user.thisName);
+      // John
+      // To access the object, a method can use the this keyword.
+      // The value of this is the object “before dot”, the one used to call the method.
+      // The value of this is evaluated during the run-time, depending on the context.
+      // ฟังก์ชันที่ถูกเก็บเป็น property ของ object เรี่ยกว่า method
+      // method จะสามารถอ้างอิงถึง object ที่เรียกใช้ตัวเองได้ผ่านคีย์เวิร์ด this
+      // this คือ object before the dot
+      // user.sayHi() จะเรียกใช้ method sayHi ซึ่งจะแสดง ค่า this.name โดย this อ้างถึง user
+      // นั่นคือจะแสดงค่า user.name ซึ่งมีค่าคือ "John"
+    </script>
+  </body>
+</html>

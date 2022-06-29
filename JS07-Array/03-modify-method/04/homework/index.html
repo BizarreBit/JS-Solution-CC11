@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0304</title>
+  </head>
+  <body>
+    <script>
+      function first(arr, n) {
+        if (n === undefined || n === 1) return arr[0];
+        if (n > 1) return arr.slice(0, n);
+      }
+
+      console.log(first([7, 9, 0, -2])); // 7
+      console.log(first([], 3)); // []
+      console.log(first([7, 9, 0, -2], 3)); // [7, 9 ,0]
+    </script>
+  </body>
+</html>

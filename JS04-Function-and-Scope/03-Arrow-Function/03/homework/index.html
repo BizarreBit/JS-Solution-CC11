@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0303</title>
+  </head>
+  <body>
+    <script>
+      const square = (n) => {
+        n ** 2;
+      };
+
+      console.log(square(7)); // *                 // undefined
+        // เพราะ การใช้ Arrow Function หากมีเพียง 1 คำสั่ง และต้องการ return ค่าที่ได้จากคำสั่งนั้น
+        // สามารถประกาศแบบย่อ โดยระบุคำสั่งทันทีหลังสัญลักษณ์ "=>" หรือภายในวงเล็บ "=> ()" 
+        // หากมีหลายคำสั่งในฟังก์ชัน ให้ระบุคำสั่งในปีกกา "=> {}" และจะต้องใช้คำสั่ง return เพื่อระบุค่าที่ต้องการ return
+
+      const calcCircleArea = (r) => Math.PI * r ** 2;
+      console.log(calcCircleArea(3)); // **        // 28.274333882308138 
+    </script>
+  </body>
+</html>

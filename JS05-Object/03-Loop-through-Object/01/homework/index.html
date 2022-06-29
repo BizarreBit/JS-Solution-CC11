@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05 0301</title>
+  </head>
+  <body>
+    <script>
+      let salaries = {
+        John: 100,
+        Ann: 160,
+        Pete: 130,
+      };
+
+      let emptyObj = {};
+
+      function sumValues(obj) {
+        let sum = 0;
+        // for (let el of Object.values(obj)) {
+        //   sum += +el;
+        // }
+        for (let key in obj) { // solution
+          sum += +obj[key];
+        }
+        return sum;
+
+        // return Object.values(obj).reduce((prev, el) => prev + +el, 0);
+      }
+
+      console.log(sumValues(salaries));
+      console.log(sumValues(emptyObj));
+    </script>
+  </body>
+</html>

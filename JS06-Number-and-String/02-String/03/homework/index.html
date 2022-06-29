@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS06 0203</title>
+  </head>
+  <body>
+    <script>
+      const ucFirst = (str) => {
+        // const first = str.charAt(0);
+        // return first.toUpperCase() + str.slice(1, str.length);
+        // solution
+        return str.slice(0, 1).toUpperCase() + str.slice(1);
+      };
+      console.log(ucFirst("thailand"));
+      console.log(ucFirst(""));
+    </script>
+  </body>
+</html>

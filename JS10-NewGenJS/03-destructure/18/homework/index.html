@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS10 0318</title>
+  </head>
+  <body>
+    <script>
+      const users = [
+        { user: "Name1" },
+        { user: "Name2", age: 2 },
+        { user: "Name2" },
+        { user: "Name3", age: 4 },
+      ];
+
+      for (const { user, age = "unknown" } of users) {
+        console.log(`${user} ${age}`);
+      }
+    </script>
+  </body>
+</html>

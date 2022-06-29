@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0115</title>
+  </head>
+  <body>
+    <script>
+      function magic() {
+        return function (x) {
+          return x * 42;
+        };
+      }
+      const answer = magic();
+      console.log(answer); // *             // function (x) {return x * 42;};
+      // เพราะ answer = magic() และ ฟังก์ชัน magic return ฟังก์ชัน anonymous function (x) {return x * 42;}
+      console.log(answer(1337)); // **      // 56154  (1337 * 42)
+      // เพราะ answer เป็นตัวแปรอ้างอิงถึงฟังก์ชั่น function (x) {return x * 42;}
+      console.log(magic(1337)(42)); // ***  // 1764   (42 * 42)
+      // เพราะ magic เป็นฟังก์ชันที่ return ฟังก์ชัน anonymous function (x) {return x * 42;} โดยไม่คำนึงถึง attribute ใดๆ
+    </script>
+  </body>
+</html>

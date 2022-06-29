@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0103</title>
+  </head>
+  <body>
+    <script>
+      let message = "Welcome to Thailand";
+
+      function logMessage(message) {
+        message = "Hello everybody";
+        console.log(message); // *      // "Hello everybody"     message นี้มี scope อยู่ใน function logMessage(message) เท่านั้น
+      }
+
+      logMessage(message);
+      console.log(message); // **       // "Welcome to Thailand" message นี้เป็น global scope
+
+      let name = "John";
+
+      function sayHi(input) {
+        console.log(name); // ***       // "John"        name นี้เป็น global scope
+        name = input;
+      }
+
+      sayHi();
+      console.log(name); // ****        // undefined     name นี้เป็น global scope ซึ่งถูกเปลี่ยนค่าโดย sayHi();
+    </script>
+  </body>
+</html>

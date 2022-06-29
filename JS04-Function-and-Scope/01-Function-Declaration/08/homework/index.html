@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0108</title>
+  </head>
+  <body>
+    <script>
+      function login(username, password) {
+        return username === "admin" && password === "P@ssw0rd";
+      }
+      login(prompt("username"), prompt("password"))
+        ? alert("Login Successfully")
+        : alert("Invalid Credential");
+    </script>
+  </body>
+</html>

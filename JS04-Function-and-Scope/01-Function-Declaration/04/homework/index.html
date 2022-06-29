@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0104</title>
+  </head>
+  <body>
+    <script>
+      function sayHi(name) {
+        let name = "Guest";      
+        console.log(name); // *  
+      }
+      // ควรจะแสดง "Guest" เพราะมีการประกาศตัวแปรชื่อ name ใน local scope 
+      // แต่เกิด error ที่บรรทัด let name = "Guest"; ก่อน เนื่องจากมีการ
+      // ประกาศตัวแปรชื่อ name เป็น function parameter ซึ่งอยู่ใน scope เดียวกัน
+      sayHi("Jim");
+    </script>
+  </body>
+</html>

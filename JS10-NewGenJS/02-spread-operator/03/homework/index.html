@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS10 0203</title>
+  </head>
+  <body>
+    <script>
+      const info = (name, surname, ...hobbies) => ({
+        name,
+        surname,
+        hobbies,
+        hobbyCount: hobbies.length,
+      });
+      console.log(info("John", "Doe", "Reading a book", "Walking"));
+    </script>
+  </body>
+</html>

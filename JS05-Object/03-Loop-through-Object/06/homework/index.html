@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05 0306</title>
+  </head>
+  <body>
+    <script>
+      const name = prompt("Enter product name");
+      const amount = +prompt("Enter sale amount");
+      const price = +prompt("Enter price of the product per piece");
+      const discount = +prompt("Enter percentage discount");
+
+      const productSale = { name, amount, price };
+      discount && (productSale.discount = discount);
+
+      const realPrice = (obj) =>
+        obj.amount * obj.price * (1 - (obj.discount || 0) / 100);
+
+      console.log(productSale);
+      console.log(realPrice(productSale));
+    </script>
+  </body>
+</html>

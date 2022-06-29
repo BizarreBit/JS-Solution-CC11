@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0502</title>
+  </head>
+  <body>
+    <script>
+      function makeWorker() {
+        let name = "Pete";
+        return function () {
+          alert(name);
+        };
+      }
+      let name = "John";
+      let work = makeWorker();
+      work(); // *      // "Pete"
+      // เพราะตัวแปร work ถูกกำหนดค่าที่ได้จากค่า return ของฟังก์ชัน makeWorker
+      // ซึ่งคือ function () {alert("Pete");}; ซึ่งได้จากการแทนค่าด้วยค่าแปร name
+      // ใน scope ของฟังก์ชั่น makeWorker() ไปแล้ว
+      // การกำหนดค่าตัวแปร name ใน Global scope จึงไม่มีผล
+
+      // javascipt.info solution
+      // เพราะ เมื่อ Function ถูกสร้างขึ้นจะมีการจดจำตัวแปรภายนอก Scope ของตัวเองไว้
+      // แม้ฟังก์ชันจะถูก return ออกไป ก็ยังคงสามารถใช้งานค่าตัวแปรภายนอกขณะถูกสร้างได้
+      //
+      // สำหรับ Javascript ทุกฟังก์ชัน, code block {...} และชุดคำสั่งหลัก จะมีเสมือนมีออบเจกต์พิเศษอยู่ภายใน
+      // เรียกว่า Lexical Environment
+      //
+      // Lexical Environment มี 2 ส่วน
+      // 1. Inner Lexical Environment Record - ตัวแปรภายใน scope และข้อมูลอื่นๆของ scope เช่น this
+      // 2. Outer Lexical Environment Record - ตำแหน่งอ้างอิง ไปยังตัวแปรภายนอก scope
+      // เมื่อมีการขอเข้าถึงตัวแปร จะค้นหาจากภายในก่อน หากไม่พบจะค้นหาในชั้นนอกถัดไปเรื่อยๆ
+      // 
+      // ในกรณี function จะเสมือนว่ามี [[Environment]] เป็น property ซึ่งเก็บ Lexical Environment โดยจะ
+      // โดยจะถูกกำหนดทันทีที่ function ถูกสร้างขึ้น การอ้างอิงถึงตัวแปรใน [[Environment]] นี้จะถูกกำหนดเพียงครั้งเดียว
+      // และจะคงอยู่ในหน่วยความจำตลอดตราบที่ยังมีช่องทางให้เข้าถึงได้
+      // Closure Function
+      
+      // เพราะตัวแปร work อ้างอิงถึง function ที่ถูก return จากฟังก์ชัน makeWorker
+      // โดยที่ฟังก์ชันจำ Outer Lexical Environment ขณะถูกสร้างไว้คือ name: "Pete"
+      // คำสั่งในฟังกชัน alert(name); จึงพบค่าตัวแปร name: "Pete" และนำมาใช้ก่อนจะพบ
+      // Lexical Environment ของชุดคำสั่งหลัก name: "John" ทำให้ alert "Pete"
+
+    </script>
+  </body>
+</html>

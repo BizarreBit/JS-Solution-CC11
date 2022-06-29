@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS03 0103</title>
+  </head>
+  <body>
+    <script>
+      const forLoopResult = [];
+      for (let i = 1; i <= 100; i++) {
+        i % 2 === 0 && forLoopResult.push(i);
+      }
+      console.log(forLoopResult);
+
+      const whileLoopResult = [];
+      let i = 1;
+      while (i <= 100) {
+        i % 2 === 0 && whileLoopResult.push(i);
+        i++;
+      }
+      console.log(whileLoopResult);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0801</title>
+  </head>
+  <body>
+    <script>
+      let salaries = {
+        John: 100,
+        Ann: 160,
+        Pete: 130,
+      };
+
+      const result1 = Object.keys(salaries).reduce(
+        (acc, el) => acc + salaries[el],
+        0
+      );
+      console.log(result1);
+
+      const result2 = Object.values(salaries).reduce((acc, el) => acc + el, 0);
+      console.log(result2);
+
+      let result3 = 0;
+      for (const [key, value] of Object.entries(salaries)) {
+        result3 += value;
+      }
+      console.log(result3);
+    </script>
+  </body>
+</html>

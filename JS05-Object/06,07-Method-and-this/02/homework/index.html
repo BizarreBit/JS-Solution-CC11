@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05 0607 02</title>
+  </head>
+  <body>
+    <script>
+    //   "use strict";
+      var name = "Joe";
+      function makeUser() {
+        return {
+          name: "John",
+          ref: this,
+        };
+      }
+      let user = makeUser();
+      console.log(user.ref.name); // *
+      // "Joe"
+      // ค่าของ this จะถูกกำหนด ณ ช่วงที่คำสั่งถูกเรียกใช้งาน
+      // ในโค้ดข้างต้น this ถูกเรียกใช้ โดยคำสั่ง let user = makeUser() 
+      // user จะเก็บที่อยู่อ้างอิงของ object ที่ถูก return จากฟังก์ชัน makeUser()
+      // ซึ่งในที่นี้ this ถูกเรียกใช้ผ่านฟังก์ชั่น makeUser ไม่ใช่ผ่าน method ของ object ด้วย dot syntax
+      // ค่าของ ref: this ในเบื้องต้นควรถูกกำหนดจะเป็น ref: undefined 
+      // การเรียกใช้ user.ref.name จะเป็นการเรียกใช้ (undefined).name ซึ่งจะเกิด error ขึ้นในโหมด "use strict"
+      // แต่กรณีนี้อยู่ในโหมด non-stict ค่าของ this จะถูกกำหนดให้เป็น global object
+      // และประกอบกับมีการกำหนดตัวแปร name = "Joe" โดยใช้ var ซึ่งจะเพิ่มค่า name: "Joe"
+      // ให้เป็น property ของ global object
+      // ทำให้ console.log(user.ref.name); แสดงค่า (global object).name
+      // ซึ่งมีค่าเป็น "Joe" ออกมา
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0309</title>
+  </head>
+  <body>
+    <script>
+      const isLeapYear = (year) => {
+        if (year % 100 === 0) {
+          return year % 400 === 0;
+        }
+        return year % 4 === 0;
+      };
+      
+      console.log(isLeapYear(1900));
+      console.log(isLeapYear(2000));
+      console.log(isLeapYear(2021));
+      console.log(isLeapYear(2022));
+      console.log(isLeapYear(2023));
+      console.log(isLeapYear(2024));
+    </script>
+  </body>
+</html>

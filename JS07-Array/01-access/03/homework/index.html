@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0103</title>
+  </head>
+  <body>
+    <script>
+      const styles = ["Jazz", "Blues"];
+      console.log(styles);
+
+      styles.push("Rock-n-Roll");
+      console.log(styles);
+
+      styles[1] = "Classi";
+      console.log(styles);
+
+      styles.splice(1, 1, "Classic");
+      console.log(styles);
+
+      delete styles[0];
+      console.log(styles);
+
+      console.log(styles.length);
+      
+      styles[styles.length] = "Last"; //solution
+      console.log(styles);
+    </script>
+  </body>
+</html>

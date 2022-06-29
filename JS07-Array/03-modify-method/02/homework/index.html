@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0302</title>
+  </head>
+  <body>
+    <script>
+      let arr = ["a", "b"];
+
+      arr.push(function () {
+        alert(this);
+        console.log(this);
+      });
+
+      arr[2](); // *
+      // Alert: arr
+
+      // เพราะ array ก็ถือเป็น object
+      // this ในกรณีนี้ มี arr เป็น object และ arr[2] เป็น method ซึ่งถูกเรียกใช้โดยคำสั่ง arr[2]()
+      // this จึงมีค่าอ้างถึง array arr ["a", "b", f]
+    </script>
+  </body>
+</html>

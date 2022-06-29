@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS02 0211</title>
+  </head>
+  <body>
+    <script>
+      const isNumber = (input) =>
+        !(input === null || input.trim() === "" || isNaN(input));
+
+      const score = prompt("Enter score");
+
+      !isNumber(score)
+        ? alert("The score must be numeric.")
+        : score < 50
+        ? alert("F")
+        : score < 60
+        ? alert("D")
+        : score < 70
+        ? alert("C")
+        : score < 80
+        ? alert("B")
+        : alert("A");
+    </script>
+  </body>
+</html>

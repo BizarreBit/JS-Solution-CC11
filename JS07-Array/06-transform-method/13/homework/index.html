@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0613</title>
+  </head>
+  <body>
+    <script>
+      let alphabets = [
+        "a",
+        "b",
+        "a",
+        "b",
+        "c",
+        "e",
+        "e",
+        "c",
+        "d",
+        "d",
+        "d",
+        "d",
+      ];
+      // expected result: ['a', 'b', 'c', 'e', 'd']
+
+      const result = [];
+      for (const element of alphabets) {
+        // const idx = result.findIndex((el) => el === element);
+        // if (idx === -1) result.push(element);
+        if (!result.includes(element)) result.push(element); // solution
+      }
+      console.log(result);
+
+      const result2 = alphabets.reduce(
+        (acc, el) => (!acc.includes(el) ? [...acc, el] : acc),
+        []
+      );
+      console.log(result2);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0312</title>
+  </head>
+  <body>
+    <script>
+      const factorial = (num) => {
+        if (isNaN(num) || num < 0 || num % 1 !== 0 || typeof num === "boolean" || num === "" ) return;
+        if (num === 0) return 1;
+        if (num > 0) {
+          let result = 1;
+          for (let i = 1; i <= num; i++) {
+            result *= i;
+          }
+          return result;
+        }
+      };
+
+      console.log(factorial(""));
+      console.log(factorial("a"));
+      console.log(factorial(null));
+      console.log(factorial(true));
+      console.log(factorial({}));
+      console.log(factorial(-20));
+      console.log(factorial(12.75));
+      console.log(factorial(0));
+      console.log(factorial(1));
+      console.log(factorial(2));
+      console.log(factorial(3));
+      console.log(factorial(4));
+      console.log(factorial(10));
+      console.log(factorial("10"));
+      console.log(factorial("0"));
+    </script>
+  </body>
+</html>

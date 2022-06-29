@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS10 0204</title>
+  </head>
+  <body>
+    <script>
+      const doubleAndReturnArgs = (arr, ...params) => [
+        ...arr,
+        ...params.map((el) => 2 * el),
+      ];
+      console.log(doubleAndReturnArgs([1, 2, 3], 4, 4));
+      console.log(doubleAndReturnArgs([2], 10, 4));
+    </script>
+  </body>
+</html>

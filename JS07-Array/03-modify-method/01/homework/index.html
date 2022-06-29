@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0301</title>
+  </head>
+  <body>
+    <script>
+      let fruits = ["Apples", "Pear", "Orange"];
+      // push a new value into the "copy"
+      let shoppingCart = fruits;
+      shoppingCart.push("Banana");
+      // what's in fruits?
+      console.log(fruits.length); // *
+      // 4
+      // จากคำสั่ง let shoppingCart = fruits; ตัวแปร shoppingCart จะเก็บที่อยู่อ้างอิงของ array
+      // เดียวกันกับตัวแปร fruits
+      // คำสั่ง shoppingCart.push("Banana"); ได้เพิ่มค่า "Banana" ต่อท้าย array ตามที่อยู่อ้างอิง
+      // ที่เก็บไว้โดย shoppingCart
+      // คำสั่ง console.log(fruits.length); ก็แสดงความยาวของ array ตามที่อยู่อ้างอิงที่เก็บไว้โดย
+      // fruits ซึ่งคือ array เดียวกัน
+    </script>
+  </body>
+</html>

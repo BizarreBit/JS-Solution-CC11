@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS06 0204</title>
+  </head>
+  <body>
+    <script>
+      function censoredWordCheck(str) {
+        const lowerCaseStr = str.toLowerCase();
+        return (
+          lowerCaseStr.includes("xxx") ||
+          lowerCaseStr.includes("sex") ||
+          lowerCaseStr.includes("porn")
+        );
+      }
+      console.log(
+        censoredWordCheck("ให้ตรวจสอบแบบ case-insensitive เช่น XXX,")
+      );
+      console.log(
+        censoredWordCheck(", pOrn")
+      );
+      console.log(
+        censoredWordCheck("sEX ให้ถือว่าเป็นคำเดียวกับ")
+      );
+      console.log(
+        censoredWordCheck("xx 9k,")
+      );
+    </script>
+  </body>
+</html>

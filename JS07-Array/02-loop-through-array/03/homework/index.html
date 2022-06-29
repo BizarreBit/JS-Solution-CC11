@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0203</title>
+  </head>
+  <body>
+    <script>
+      const sales = [
+        { price: 1000, discount: 0.1 },
+        { price: 500, discount: 0.05 },
+        { price: 100 },
+      ];
+
+      //   const summary = sales.map((el) => ({
+      //     netPrice: el.price * (1 - (el.discount || 0)),
+      //   }));
+      //   console.log(summary);
+
+      const summary = [];
+      for (const el of sales) {
+        // summary.push({ netPrice: el.price * (1 - (el.discount || 0)) });
+        summary[summary.length] = {
+          netPrice: el.price * (1 - (el.discount || 0)),
+        };
+      }
+      console.log(summary);
+    </script>
+  </body>
+</html>

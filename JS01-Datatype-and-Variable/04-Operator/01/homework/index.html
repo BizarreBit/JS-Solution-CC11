@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS01 0401</title>
+  </head>
+  <body>
+    <script>
+      let a = undefined; // a = undefined
+      let b = 2; // a = undefined, b = 2
+      let c = a++; // a = +undefined + 1 = NaN, b = 2, c = +undefined = NaN
+
+      const d = a.toString(); // d = NaN.toString() = "NaN"
+      const e = b.toString(); // e = 2.toString() = "2"
+      const f = c.toString(); // f = NaN.toString() = "NaN"
+
+      console.log(`d = ${d}, e = ${e}, f = ${f}`);
+      // "d = NaN, e = 2, f = NaN"
+
+      let a_solution = undefined;
+      console.log("d:");
+      let d_solution = String(a_solution);
+      console.log(d_solution, typeof d_solution);
+      d_solution = "" + a_solution;
+      console.log(d_solution, typeof d_solution);
+      d_solution = `${a_solution}`;
+      console.log(d_solution, typeof d_solution);
+
+      let b_solution = 2;
+      console.log("e:");
+      let e_solution = String(b_solution);
+      console.log(e_solution, typeof e_solution);
+      e_solution = "" + b_solution;
+      console.log(e_solution, typeof e_solution);
+      e_solution = `${b_solution}`;
+      console.log(e_solution, typeof e_solution);
+      e_solution = b_solution.toString();
+      console.log(e_solution, typeof e_solution);
+
+      let c_solution = a_solution++;
+      console.log("f:");
+      let f_solution = String(c_solution);
+      console.log(f_solution, typeof f_solution);
+      f_solution = "" + c_solution;
+      console.log(f_solution, typeof f_solution);
+      f_solution = `${c_solution}`;
+      console.log(f_solution, typeof f_solution);
+      f_solution = c_solution.toString();
+      console.log(f_solution, typeof f_solution);
+    </script>
+  </body>
+</html>

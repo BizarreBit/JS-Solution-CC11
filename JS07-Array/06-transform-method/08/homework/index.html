@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS07 0608</title>
+  </head>
+  <body>
+    <script>
+      const scores = [
+        { score: 90, subject: "HTML", weight: 0.2 },
+        { score: 95, subject: "CSS", weight: 0.3 },
+        { score: 85, subject: "JavaScript", weight: 0.5 },
+      ];
+
+      const weightedAvg1 = (scores) => {
+        let totalWeight = 0;
+        let weightedSum = 0;
+        for (const el of scores) {
+          totalWeight += el.weight;
+          weightedSum += el.score * el.weight;
+        }
+        return weightedSum / totalWeight;
+      };
+      console.log(weightedAvg1(scores));
+
+      const weightedAvg2 = (scores) =>
+        scores.reduce(
+          (acc, el, i, arr) =>
+            i === arr.length - 1
+              ? (acc.weightedSum + el.score * el.weight) /
+                (acc.totalWeight + el.weight)
+              : {
+                  weightedSum: acc.weightedSum + el.score * el.weight,
+                  totalWeight: acc.totalWeight + el.weight,
+                },
+          { weightedSum: 0, totalWeight: 0 }
+        );
+      console.log(weightedAvg2(scores));
+    </script>
+  </body>
+</html>

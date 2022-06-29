@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS04 0114</title>
+  </head>
+  <body>
+    <script>
+    //   function max(...input) {
+    //     let max;
+    //     for (attr of input) {
+    //       if ((typeof attr === "string" && attr.trim() === "") || isNaN(attr))
+    //         return NaN;
+    //       max ? attr > max && (max = attr) : (max = attr);
+    //     }
+    //     return max;
+    //   }
+
+    //   function max(...input) {
+    //     let max;
+    //     for (i = 0; i < input.length && i < 4; i++) {
+    //       if (
+    //         (typeof input[i] === "string" && input[i].trim() === "") ||
+    //         isNaN(input[i])
+    //       )
+    //         return NaN;
+    //       max ? input[i] > max && (max = input[i]) : (max = input[i]);
+    //     }
+    //     return max;
+    //   }
+
+    //   function max(a, b, c, d) {
+    //     if (
+    //       (a !== undefined &&
+    //         ((typeof a === "string" && a.trim() === "") || isNaN(a))) ||
+    //       (b !== undefined &&
+    //         ((typeof b === "string" && b.trim() === "") || isNaN(b))) ||
+    //       (c !== undefined &&
+    //         ((typeof c === "string" && c.trim() === "") || isNaN(c))) ||
+    //       (d !== undefined &&
+    //         ((typeof d === "string" && d.trim() === "") || isNaN(d)))
+    //     )
+    //       return NaN;
+    //     let max = a;
+    //     b > max && (max = b);
+    //     c > max && (max = c);
+    //     return max;
+    //   }
+
+      function max(a, b, c, d) {
+        //solution
+        if (a === undefined) return;
+        if (b === undefined) return Math.max(a);
+
+        if (c === undefined) return Math.max(a, b);
+
+        if (d === undefined) return Math.max(a, b, c);
+
+        return Math.max(a, b, c, d);
+      }
+
+      console.log(max()); // undefined
+      console.log(max(2)); // 2
+      console.log(max(3, 1)); // 3
+      console.log(max(7, 3, 9, 2)); // 9
+      console.log(max(7, 3, "aaaaa", 2)); // NaN
+      console.log(max(7, 3, "", 2)); // 7
+      console.log(max(7, 3, null, 2, 9)); // 7
+      console.log(max(7, 3, undefined, 2, 9)); // 7
+      console.log(max(7, 3, NaN, 2, 9)); // NaN
+      console.log(max(7, 3, {}, 2, 9)); // NaN
+    </script>
+  </body>
+</html>
